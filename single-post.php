@@ -13,17 +13,9 @@
     <link href="styles/blog.css" rel="stylesheet">
   </head>
   <body>
-    <?php include('header.php');
+    <?php include('header.php');?>
 
-    $sqlUpit = "SELECT * FROM posts";
-    $stmt = $connection->prepare($sqlUpit);
-    $stmt->execute();
-    $stmt->setFetchMode(PDO::FETCH_ASSOC);
-    $singlePost = $stmt->fetch();
-    // echo '<pre>';
-    // var_dump($singlePost);
-    // echo '</pre>';
-    ?>
+
 <main role="main" class="container">
 
   <div class="row">
@@ -31,6 +23,18 @@
       <div class="col-sm-8 blog-main">
 
         <div class="blog-post">
+          <?php
+          $sqlUpit = "SELECT * FROM posts";
+          $stmt = $connection->prepare($sqlUpit);
+          $stmt->execute();
+          $stmt->setFetchMode(PDO::FETCH_ASSOC);
+          $singlePost = $stmt->fetch();
+          // echo '<pre>';
+          // var_dump($singlePost);
+          // echo '</pre>';
+          ?>
+
+
 
           <h2 class="blog-post-title"><?php echo($singlePost['title']); ?></h2>
             <p class="blog-post-meta"><?php echo($singlePost['Created_at']); ?> by <a href="#"><?php echo($singlePost['author']); ?></a></p>
@@ -57,7 +61,7 @@
              <div class="single-comment">
                <ul>
                   <li>
-                <hr>    
+                <hr>
                 <div>posted by: <strong><?php echo($comment['author']); ?>
                 </strong> on <?php echo($comment['Created_at']); ?></div>
 
