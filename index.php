@@ -1,8 +1,8 @@
 <?php
     include('db.php');
-?> 
-<!doctype html>
-<html lang="en">
+?>
+<!DOCTYPE html>
+<html>
 <head>
 
     <meta charset="utf-8">
@@ -32,7 +32,6 @@
 
         <div class="col-sm-8 blog-main">
 
-            <div class="blog-post">
                <?php
                     include('posts.php');
                 ?>
@@ -43,7 +42,7 @@
 
         </div><!-- /.blog-main -->
 
-        <?php 
+        <?php
             include('sidebar.php');
         ?>
     </div><!-- /.row -->
