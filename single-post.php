@@ -6,6 +6,7 @@ error_reporting(E_ALL);
   include('db.php');
   include('header.php');
   $postId = $_GET['post_id'];
+  
 ?>
 <body>
   <main role="main" class="container">
@@ -29,10 +30,10 @@ error_reporting(E_ALL);
 
 
 
-          <h2 class="blog-post-title"><?php echo($singlePost['title']); ?></h2>
-            <p class="blog-post-meta"><?php echo($singlePost['created_at']); ?> by <a href="#"><?php echo($singlePost['author']); ?></a></p>
+          <h2 class="blog-post-title"><?php echo($singlePost['Title']); ?></h2>
+            <p class="blog-post-meta"><?php echo($singlePost['Created_at']); ?> by <a href="#"><?php echo($singlePost['Author']); ?></a></p>
             <hr>
-            <p><?php echo($singlePost['body']); ?></p>
+            <p><?php echo($singlePost['Body']); ?></p>
             <button type="submit" class="btn btn-default" name="button">Delete this post</button>
             <?php
                 $errorMessage =$_GET;

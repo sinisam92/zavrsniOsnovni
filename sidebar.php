@@ -3,7 +3,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-$sql3 = "SELECT title, id FROM posts ORDER BY created_at DESC";
+$sql3 = "SELECT title, id FROM posts ORDER BY created_at DESC LIMIT 5";
 $state3 = $connection->prepare($sql3);
 $state3->execute();
 $state3->setFetchMode(PDO::FETCH_ASSOC);
