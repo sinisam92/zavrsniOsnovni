@@ -1,6 +1,6 @@
 <?php
 
-        $sqlUpitComments = "SELECT * FROM comments";    
+        $sqlUpitComments = "SELECT * FROM comments";
         $stmt2 = $connection->prepare($sqlUpitComments);
         $stmt2->execute();
         $stmt2->setFetchMode(PDO::FETCH_ASSOC);
@@ -13,7 +13,7 @@
         <div class="single-comment">
             <ul>
                 <li>
-        <hr>
+            <hr>
                     <div>posted by: <strong><?php echo($comment['author']); ?>
                     </strong> on 10. 10. 2018</div>
 
@@ -21,7 +21,11 @@
 
         </div>
 
-
-        <?php } ?>
-                </li>
-            </ul>
+              </li>
+          </ul>
+          <form class="delete-form" action= "delete-comment.php" method="POST">
+            <input type="hidden" name="comment" value="comment">
+            <button type="submit"  class="btn btn-default" name="deleteComment" >Delete comment</button>
+          </form>
+       </form>
+      <?php } ?>
