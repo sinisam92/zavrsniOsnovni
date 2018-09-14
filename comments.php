@@ -1,6 +1,6 @@
 <?php
  
-        $sqlUpitComments = "SELECT * FROM comments";
+$sqlUpitComments = "SELECT * FROM comments WHERE post_id ={$postId}";
         $stmt2 = $connection->prepare($sqlUpitComments);
         $stmt2->execute();
         $stmt2->setFetchMode(PDO::FETCH_ASSOC);
@@ -14,8 +14,7 @@
             <ul>
                 <li>
             <hr>
-                    <div>posted by: <strong><?php echo($comment['author']); ?>
-                    </strong> on 10. 10. 2018</div>
+                    <div>posted by: <strong><?php echo($comment['author']); ?></strong></div>
 
             <div><?php echo($comment['text']); ?></div>
 
