@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="http://room-number.ru/wp-content/uploads/2015/04/hotel.jpg">
     <title>Vivify blog</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link href="styles/blog.css" rel="stylesheet">

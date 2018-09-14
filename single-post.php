@@ -6,7 +6,7 @@ error_reporting(E_ALL);
   include('db.php');
   include('header.php');
   $postId = $_GET['post_id'];
-  
+
 ?>
 <body>
   <main role="main" class="container">
@@ -30,19 +30,28 @@ error_reporting(E_ALL);
 
 
 
-          <h2 class="blog-post-title"><?php echo($singlePost['Title']); ?></h2>
-            <p class="blog-post-meta"><?php echo($singlePost['Created_at']); ?> by <a href="#"><?php echo($singlePost['Author']); ?></a></p>
+          <h2 class="blog-post-title"><?php echo($singlePost['title']); ?></h2>
+            <p class="blog-post-meta"><?php echo($singlePost['created_at']); ?> by <a href="#"><?php echo($singlePost['author']); ?></a></p>
             <hr>
-            <p><?php echo($singlePost['Body']); ?></p>
-            <button type="submit" class="btn btn-default" name="button">Delete this post</button>
-            <?php
-                $errorMessage =$_GET;
-                if (!empty($errorMessage)){
-                    echo "<div class='alert-danger'>
-                        <strong>Upozorenje!</strong> Nisu popunjena sva polja!
-                        </div>";
+            <p><?php echo($singlePost['body']); ?></p>
+
+            <form  class="delete-post" action= "delete-post.php" method="post" name="delPost">
+            <button id="deleteButton" type="submit" class="btn btn-default" name="button-postDelete" onclick="return promptYouShre()">Delete this post</button>
+              <input type="hidden" name="postId" value="<?php echo $postId;?>">
+            </form>
+            <script>
+              function promptYouShre() {
+
+                var areSure = prompt('Do you really want to delete this post?(Yes/No)');
+                if(areSure === 'Yes' || areSure == 'yes') {
+                  return true;
+                }else {
+                  return false;
                 }
-            ?>
+              }
+
+            </script>
+
             <div class="post-comment">
               <form class="alert" role="alert" action="create-comment.php" method="post" name="createComment" onsubmit="return validateForm()">
                 <label>First and last name:</label><br>
@@ -53,6 +62,17 @@ error_reporting(E_ALL);
                 <input type="hidden" name="postId" value=<?php echo $postId ?>>
               </form>
             </div><!-- /.post-comment-->
+            <script>
+            function validateForm() {
+             var name = document.forms["createComment"]["name"].value;
+             var comment = document.forms["createComment"]["comment"].value;
+             if (name == "" || comment == "") {
+                 alert("All fields must be filled");
+                 return false;
+             }
+           }
+            </script>
+
             <button id="comments-btn" class="btn btn-default" onclick="showHide()">Hide Comments</button>
             <div id="comments-div">
 

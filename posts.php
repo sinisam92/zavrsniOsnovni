@@ -17,15 +17,15 @@ error_reporting(E_ALL);
   ?>
 <div class="blog-post">
 	<h2 class="blog-post-title">
-		<a href="single-post.php?post_id=<?php echo $post['id']?>"><?php echo($post['Title']); ?></a>
+		<a href="single-post.php?post_id=<?php echo $post['id']?>"><?php echo($post['title']); ?></a>
 	</h2>
 	<p class="blog-post-meta">
-		<?php echo($post['Created_at']); ?> by
-		<a href="#"><?php echo($post['Author']); ?></a>
+		<?php echo($post['created_at']); ?> by
+		<a href="#"><?php echo($post['author']); ?></a>
 	</p>
 	<hr>
 		<p>
-			<?php echo($post['Body']); ?>
+			<?php echo($post['body']); ?>
 		</p>
 	</div>
 	<!-- /.blog-post -->

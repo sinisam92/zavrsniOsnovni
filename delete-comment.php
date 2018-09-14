@@ -11,6 +11,4 @@ $sql = "DELETE FROM comments WHERE id={$commentId}";
 
 header("Location:single-post.php?post_id=$postId");
 
-var_dump($commentId);
-
 ?>
