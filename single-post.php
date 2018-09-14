@@ -30,10 +30,10 @@ error_reporting(E_ALL);
 
 
 
-          <h2 class="blog-post-title"><?php echo($singlePost['title']); ?></h2>
-            <p class="blog-post-meta"><?php echo($singlePost['created_at']); ?> by <a href="#"><?php echo($singlePost['author']); ?></a></p>
+          <h2 class="blog-post-title"><?php echo($singlePost['Title']); ?></h2>
+            <p class="blog-post-meta"><?php echo($singlePost['Created_at']); ?> by <a href="#"><?php echo($singlePost['Author']); ?></a></p>
             <hr>
-            <p><?php echo($singlePost['body']); ?></p>
+            <p><?php echo($singlePost['Body']); ?></p>
 
             <form  class="delete-post" action= "delete-post.php" method="post" name="delPost">
             <button id="deleteButton" type="submit" class="btn btn-default" name="button-postDelete" onclick="return promptYouShre()">Delete this post</button>

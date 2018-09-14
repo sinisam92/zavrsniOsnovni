@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 
 $servername = "127.0.0.1";
 $username = "root";
-$password = "sinisa1992";
+$password = "vivify";
 $dbname = "sinisaBlog";
 
 try {
